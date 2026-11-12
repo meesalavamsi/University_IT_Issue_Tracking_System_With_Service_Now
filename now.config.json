@@ -1,0 +1,7 @@
+{
+    "scope": "x_774308_campus360",
+    "scopeId": "0fa4e9c7e087434bb52c03096bab3ae9",
+    "name": "Campus360 – University IT Issue Tracking & College Campus Management System",
+    "description": "Campus360: university IT issue tracking extended into a complete college campus management system (students, faculty, departments, hostels, attendance, labs, infrastructure, assets, onboarding, registration, service requests, portals and reporting).",
+    "tsconfigPath": "./src/server/tsconfig.json"
+}

@@ -1,0 +1,77 @@
+/* Campus360 design tokens.
+   Surfaces and text resolve to the instance's Horizon (Polaris) theme variables, so the portal follows the
+   user's light/dark theme; the Campus360 brand palette (indigo → violet → cyan) is fixed. */
+:root {
+    --c360-bg: rgb(var(--now-color_background--secondary, 243, 244, 250));
+    --c360-surface: rgb(var(--now-color_background--primary, 255, 255, 255));
+    --c360-surface-2: rgb(var(--now-color_background--tertiary, 240, 241, 248));
+    --c360-border: rgb(var(--now-color_border--tertiary, 228, 230, 240));
+    --c360-text: rgb(var(--now-color_text--primary, 17, 20, 45));
+    --c360-text-2: rgb(var(--now-color_text--secondary, 82, 88, 112));
+    --c360-text-3: rgb(var(--now-color_text--tertiary, 120, 126, 150));
+
+    /* Brand */
+    --c360-indigo: #4f46e5;
+    --c360-violet: #7c3aed;
+    --c360-cyan: #06b6d4;
+    --c360-ink: #0f0c29;
+    --c360-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #c026d3 100%);
+    --c360-gradient-soft: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(124, 58, 237, 0.08));
+    --c360-accent: var(--c360-indigo);
+    --c360-accent-soft: rgba(79, 70, 229, 0.1);
+    --c360-positive: #059669;
+    --c360-warning: #d97706;
+    --c360-critical: #e11d48;
+
+    --c360-radius: 12px;
+    --c360-radius-lg: 18px;
+    --c360-radius-xl: 24px;
+    --c360-space-1: 4px;
+    --c360-space-2: 8px;
+    --c360-space-3: 12px;
+    --c360-space-4: 16px;
+    --c360-space-5: 24px;
+    --c360-space-6: 32px;
+    --c360-shadow: 0 1px 2px rgba(30, 27, 75, 0.04), 0 4px 16px rgba(30, 27, 75, 0.06);
+    --c360-shadow-hover: 0 12px 32px rgba(30, 27, 75, 0.14);
+    --c360-shadow-brand: 0 16px 40px rgba(79, 70, 229, 0.28);
+    --c360-sidebar-w: 268px;
+    --c360-font: 'Inter', 'Segoe UI', var(--now-font-family, 'Lato'), system-ui, -apple-system, sans-serif;
+    --c360-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+    background:
+        radial-gradient(1200px 600px at 100% -10%, rgba(124, 58, 237, 0.07), transparent 60%),
+        radial-gradient(900px 500px at -10% 110%, rgba(6, 182, 212, 0.06), transparent 60%),
+        var(--c360-bg);
+    background-attachment: fixed;
+    color: var(--c360-text);
+    font-family: var(--c360-font);
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { margin: 0; color: var(--c360-text); font-weight: 700; letter-spacing: -0.015em; }
+h1 { font-size: 26px; }
+h2 { font-size: 17px; }
+h3 { font-size: 15px; }
+p { margin: 0; }
+.c360-muted { color: var(--c360-text-2); }
+.c360-subtle { color: var(--c360-text-3); font-size: 12px; }
+.c360-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+:focus-visible { outline: 2px solid var(--c360-accent); outline-offset: 2px; border-radius: 6px; }
+::selection { background: rgba(124, 58, 237, 0.2); }
+.c360-icon { flex-shrink: 0; display: block; }
+
+@keyframes c360-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes c360-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes c360-float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-18px, 14px); } }
+@keyframes c360-wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(14deg); } 20%, 40% { transform: rotate(-8deg); } }
+@keyframes c360-shimmer { from { background-position: -400px 0; } to { background-position: 400px 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

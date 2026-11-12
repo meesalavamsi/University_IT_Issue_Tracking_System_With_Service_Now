@@ -1,0 +1,29 @@
+{
+    "name": "campus360",
+    "version": "2.0.0",
+    "description": "Campus360 – University IT Issue Tracking & College Campus Management System (ServiceNow scoped app)",
+    "license": "UNLICENSED",
+    "imports": {
+        "#now:*": "./@types/servicenow/fluent/*/index.js"
+    },
+    "scripts": {
+        "build": "now-sdk build",
+        "deploy": "now-sdk install --demoData=false",
+        "deploy:with-demo": "now-sdk install --demoData=true",
+        "transform": "now-sdk transform",
+        "types": "now-sdk dependencies",
+        "test": "node --test test/security/access-rules.test.mjs test/security/issue-visibility.test.mjs test/security/workflow-authority.test.mjs test/security/build-config.test.mjs test/portal/core.test.mjs test/portal/module-catalog.test.mjs"
+    },
+    "dependencies": {
+        "@servicenow/react-components": "^0.1.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@servicenow/glide": "27.0.5",
+        "@servicenow/sdk": "4.14.0",
+        "@types/react": "18.3.12",
+        "@types/react-dom": "18.3.1",
+        "typescript": "5.5.4"
+    }
+}
